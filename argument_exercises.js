@@ -27,3 +27,37 @@ Function.prototype.myBind1 = function (ctx) {
 Function.prototype.myBind2 = function (ctx, ...args){
   return (...callArgs) => this.apply(ctx, args.concat(callArgs));
 };
+
+
+Function.prototype.myCurry = function (numArgs) {
+  const numbers = [];
+  
+  const curriedSum = (num) => {
+    numbers.push(num);
+    if (numbers.length === numArgs) {
+      let sum = 0;
+      numbers.forEach(arg => sum += arg);
+      return sum;
+    } else {
+      return curriedSum;
+    }
+  };
+  return curriedSum;
+};
+
+
+
+Function.prototype.mediocreCurry = function (numArgs) {
+  const numbers = [];
+  
+  const curriedFun = (...num) => {
+    num.forEach (arg => numbers.push(arg));
+    
+    if (numbers.length === numArgs) {
+      this(...num);
+    } else {
+      return curriedFun;
+    }
+  };
+  return curriedFun;
+};
