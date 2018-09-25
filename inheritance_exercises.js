@@ -17,7 +17,7 @@ function Curry(spiceLevel){
 }
 
 Curry.prototype.announce = function announce(){
-    console.log(`I have a spice level of ${spiciness}`);
+    console.log(`I have a spice level of ${this.spiciness}`);
   };
 
 function burmeseCurry(spiceLevel, cuisine){

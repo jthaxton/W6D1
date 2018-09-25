@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Asteroids! WOoot W00ot!</title>
+  </head>
+  <body>
+    <canvas height="500" width="500" id="game-canvas">
+      <script src = "./bundle.js">
+      
+      var canvas = document.getElementById('game-canvas'); 
+      var c = canvas.getContext('2d'); 
+      
+      var grad = c.createLinearGradient(0,0,0, 200);
+      grad.addColorStop(0, "red");
+      grad.addColorStop(1, "black");
+      c.fillStyle = grad; 
+      c.fillRect(100,100,400,300); 
+      
+      </script>
+  </body>
+</html>
